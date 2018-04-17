@@ -12,6 +12,8 @@
 		AA46AC8F207D114900008A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46AC8D207D114900008A94 /* Main.storyboard */; };
 		AA46AC91207D114A00008A94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA46AC90207D114A00008A94 /* Assets.xcassets */; };
 		AA46AC94207D114A00008A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46AC92207D114A00008A94 /* LaunchScreen.storyboard */; };
+		AA9E19902086300C000C99A2 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E198F2086300C000C99A2 /* PhotosCollectionViewController.swift */; };
+		AA9E1992208631FA000C99A2 /* animalPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E1991208631FA000C99A2 /* animalPhotoCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		AA46AC90207D114A00008A94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA46AC93207D114A00008A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA46AC95207D114A00008A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA9E198F2086300C000C99A2 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		AA9E1991208631FA000C99A2 /* animalPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalPhotoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				AA46AC90207D114A00008A94 /* Assets.xcassets */,
 				AA46AC92207D114A00008A94 /* LaunchScreen.storyboard */,
 				AA46AC95207D114A00008A94 /* Info.plist */,
+				AA9E198F2086300C000C99A2 /* PhotosCollectionViewController.swift */,
+				AA9E1991208631FA000C99A2 /* animalPhotoCell.swift */,
 			);
 			path = Zoo_HHuang_SCifuentes;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9E1992208631FA000C99A2 /* animalPhotoCell.swift in Sources */,
+				AA9E19902086300C000C99A2 /* PhotosCollectionViewController.swift in Sources */,
 				AA46AC8C207D114900008A94 /* ViewController.swift in Sources */,
 				AA46AC8A207D114900008A94 /* AppDelegate.swift in Sources */,
 			);
