@@ -7,15 +7,40 @@
 //
 
 import UIKit
+import AVFoundation
+
+//import AudioToolbox
 
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
-    
-    let photos=["dog","cat","cow","chicken","snack","pig"]
+
+    var backgroundAudioPlayer: AVAudioPlayer?
+
+    let photos = ["Dog", "Cat", "Cow", "Chicken", "Snake", "Pig"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+
+        } catch {
+            print("Setting active to AVAudioSessionCategoryPlayback failed")
+        }
+        if let backgroundURL = Bundle.main.url(forResource: "Zoo", withExtension: "mp3") {
+            do {
+                try backgroundAudioPlayer = AVAudioPlayer(contentsOf: backgroundURL)
+                if let player = backgroundAudioPlayer {
+                    player.numberOfLoops = Int(-1)
+                    player.prepareToPlay()
+                    player.play()
+                }
+            } catch {
+                print("Setting AVAudioPlayer failed.")
+            }
+        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,19 +49,30 @@ class PhotosCollectionViewController: UICollectionViewController {
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+
     }
 
-    
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        
-        
+        if let advc = segue.destination as? AnimalDescriptionViewController {
+            if let cell = sender as? AnimalViewCell {
+                if let indexPath = collectionView?.indexPath(for: cell) {
+                    let animal = UIImage(named: photos[indexPath.row])
+                    animal?.accessibilityIdentifier = photos[indexPath.row]
+                    advc.animalImageToDisplay = animal
+
+                }
+            }
+        }
+
+
     }
-    
+
 
     // MARK: UICollectionViewDataSource
 
@@ -52,11 +88,11 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! animalPhotoCell
-    
-        cell.imageView.image = UIImage(named: photos[indexPath.row])    
+
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AnimalViewCell
+
+        cell.imageView.image = UIImage(named: photos[indexPath.row])
         return cell
     }
 

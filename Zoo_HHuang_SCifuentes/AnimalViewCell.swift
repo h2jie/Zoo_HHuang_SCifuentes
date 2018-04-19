@@ -1,14 +1,15 @@
 //
-//  animalPhotoCell.swift
+//  AnimalViewCell.swift
 //  Zoo_HHuang_SCifuentes
 //
-//  Created by Hangjie Huang on 2018/4/17.
+//  Created by Hangjie Huang on 2018/4/19.
 //  Copyright © 2018年 Hangjie Huang. All rights reserved.
 //
 
 import UIKit
 
-class animalPhotoCell: UICollectionViewCell {
+class AnimalViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
+    
 }
