@@ -24,7 +24,8 @@ class AnimalDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        animalImageView.isUserInteractionEnabled = true
+        
         if let animal = animalImageToDisplay {
 
             self.animalImageView.image = animal
@@ -49,14 +50,49 @@ class AnimalDescriptionViewController: UIViewController {
             //Button Start animacion
             buttonStart.frame = CGRect(x: self.view.frame.width / 2 - BUTTON_WIDTH / 2, y: self.view.frame.height - BUTTON_HEIGHT - 100, width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
             buttonStart.setTitle("Start Animation", for: UIControlState.normal)
-            buttonStart.addTarget(self, action: #selector(touchUpStopAnimation), for: UIControlEvents.touchUpInside)
+            buttonStart.addTarget(self, action: #selector(touchUpStartAnimation), for: UIControlEvents.touchUpInside)
             self.view.addSubview(buttonStart)
 
             //Button Stop animacion
             buttonStop.frame = buttonStart.frame
+            buttonStop.setTitle("Stop Animation", for: UIControlState.normal)
+            buttonStop.addTarget(self, action: #selector(touchUpStopAnimation), for: UIControlEvents.touchUpInside)
+            self.view.addSubview(buttonStop)
+            buttonStop.isHidden = true
 
         case "Cat":
             print("cat")
+            var imagesArray: Array<UIImage> = []
+            for index in 0...8 {
+                let name: String = "cat\(index)"
+                let image: UIImage = UIImage(named: name)!
+                imagesArray.append(image)
+            }
+            
+            
+            animalImageView.image = imagesArray[0]
+            animalImageView.animationImages = imagesArray
+            animalImageView.animationDuration = 2.0
+            
+            //Button Start animacion
+            buttonStart.frame = CGRect(x: self.view.frame.width / 2 - BUTTON_WIDTH / 2, y: self.view.frame.height - BUTTON_HEIGHT - 100, width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
+            buttonStart.setTitle("Start Animation", for: UIControlState.normal)
+            buttonStart.addTarget(self, action: #selector(touchUpStartAnimation), for: UIControlEvents.touchUpInside)
+            self.view.addSubview(buttonStart)
+            
+            //Button Stop animacion
+            buttonStop.frame = buttonStart.frame
+            buttonStop.setTitle("Stop Animation", for: UIControlState.normal)
+            buttonStop.addTarget(self, action: #selector(touchUpStopAnimation), for: UIControlEvents.touchUpInside)
+            self.view.addSubview(buttonStop)
+            buttonStop.isHidden = true
+            
+        case "Cow":
+            let pinchRecognizer = UIPinchGestureRecognizer(
+                target: self, action: #selector(changeScale(byReactingTo:))
+            )
+            animalImageView.addGestureRecognizer(pinchRecognizer)
+            animalImageView.setNeedsDisplay()
         default:
             print("nada")
         }
@@ -68,9 +104,38 @@ class AnimalDescriptionViewController: UIViewController {
 
 
     }
+    
+    @objc func changeScale(byReactingTo pinchRecognizer:UIPinchGestureRecognizer){
+        switch pinchRecognizer.state {
+        case .changed:
+            //print("changeScale")
+            var auxSize = animalImageView.frame.size
+            auxSize.height *= pinchRecognizer.scale
+            auxSize.width *= pinchRecognizer.scale
+            animalImageView.frame.size = auxSize
+            pinchRecognizer.scale = 1
+            
+        default: break
+        }
+    }
 
     @IBAction func tap(_ sender: UITapGestureRecognizer) {
-        print("tap")
+        switch self.navigationItem.title {
+        case "Dog":
+            print("dog")
+        case "Cat":
+            print("cat")
+        case "Cow":
+            print("cow")
+        case "Chicken":
+            print("chicken")
+        case "Snake":
+            print("snake")
+        case "Pig":
+            print("pig")
+        default:
+            print("nada")
+        }
     }
 
     @IBAction func touchUpStartAnimation(_ sender: UIButton) {
