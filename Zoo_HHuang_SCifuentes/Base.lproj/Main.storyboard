@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,8 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="5cG-g2-gIq">
-                                <rect key="frame" x="37" y="144" width="300" height="156"/>
+                                <rect key="frame" x="16" y="144" width="343" height="156"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="tBr-Xi-o4K"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="yvi-hW-WaY" appends="YES" id="SXT-xv-mAJ"/>
                                 </connections>
@@ -28,10 +32,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5cG-g2-gIq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2EB-Ll-D7V"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5cG-g2-gIq" secondAttribute="bottom" constant="367" id="K3f-YX-oN1"/>
-                            <constraint firstItem="5cG-g2-gIq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="OiD-Ws-dPz"/>
-                            <constraint firstItem="5cG-g2-gIq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="qmb-na-Vq4"/>
+                            <constraint firstItem="5cG-g2-gIq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Ui-ru-GTB"/>
+                            <constraint firstItem="5cG-g2-gIq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="Jw3-YG-f1h"/>
+                            <constraint firstItem="5cG-g2-gIq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dZn-sO-LKe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,7 +50,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2777" y="200"/>
+            <point key="canvasLocation" x="2776.8000000000002" y="199.25037481259372"/>
         </scene>
         <!--ZOOCollectionController-->
         <scene sceneID="wWd-XQ-S4l">

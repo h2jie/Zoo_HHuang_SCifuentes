@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class AnimalDescriptionViewController: UIViewController {
 
@@ -19,7 +20,8 @@ class AnimalDescriptionViewController: UIViewController {
     var animalImageToDisplay: UIImage?
     var buttonStart = UIButton(type: UIButtonType.system)
     var buttonStop = UIButton(type: UIButtonType.system)
-
+    
+    var animalSoundID:SystemSoundID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,21 +95,44 @@ class AnimalDescriptionViewController: UIViewController {
             )
             animalImageView.addGestureRecognizer(pinchRecognizer)
             animalImageView.setNeedsDisplay()
+            
+        case "Chicken":
+            let pinchRecognizer = UIPinchGestureRecognizer(
+                target: self, action: #selector(changeScale(byReactingTo:))
+            )
+            animalImageView.addGestureRecognizer(pinchRecognizer)
+            animalImageView.setNeedsDisplay()
+            
+        case "Snake":
+            let rotationRecognizer = UIRotationGestureRecognizer(
+                target: self,
+                action: #selector(rotationAnimation)
+            )
+            rotationRecognizer.rotation = CGFloat(90*Double.pi/180)
+            animalImageView.addGestureRecognizer(rotationRecognizer)
+            animalImageView.setNeedsDisplay()
+            
+        case "Pig":
+            let swipeUpRecognizer = UISwipeGestureRecognizer(
+                target: self, action: #selector(swipeUpAnimation)
+            )
+            swipeUpRecognizer.direction = UISwipeGestureRecognizerDirection.up
+            animalImageView.addGestureRecognizer(swipeUpRecognizer)
+            animalImageView.setNeedsDisplay()
+            
         default:
             print("nada")
         }
 
-
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapOfSound(_:)))
-//        animalImageView.isUserInteractionEnabled = true
-//        animalImageView.addGestureRecognizer(tapGestureRecognizer)
-
+        if let animalSoundURL = Bundle.main.url(forResource: self.navigationItem.title, withExtension: "mp3"){
+            AudioServicesCreateSystemSoundID(animalSoundURL as CFURL, &animalSoundID)
+        }
 
     }
     
     @objc func changeScale(byReactingTo pinchRecognizer:UIPinchGestureRecognizer){
         switch pinchRecognizer.state {
-        case .changed:
+        case .changed, .ended:
             //print("changeScale")
             var auxSize = animalImageView.frame.size
             auxSize.height *= pinchRecognizer.scale
@@ -118,24 +143,51 @@ class AnimalDescriptionViewController: UIViewController {
         default: break
         }
     }
+    
+    @objc func swipeUpAnimation(){
+        let animator = UIViewPropertyAnimator(
+            duration: 2,
+            curve: UIViewAnimationCurve.linear,
+            animations: {
+                self.animalImageView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height / 2 - self.view.frame.height)
+            }
+        )
+        animator.addCompletion{ finished in
+            let secondAnimator = UIViewPropertyAnimator(
+                duration: 4,
+                curve: UIViewAnimationCurve.easeOut,
+                animations: {
+                    self.animalImageView.transform = CGAffineTransform.identity
+                }
+            )
+            secondAnimator.startAnimation()
+        }
+        animator.startAnimation()
+    }
+    
+    @objc func rotationAnimation(){
+        let animator = UIViewPropertyAnimator(
+            duration: 3,
+            curve: UIViewAnimationCurve.easeIn,
+            animations: {
+                self.animalImageView.transform = CGAffineTransform(rotationAngle: CGFloat(180*Double.pi/180))
+            }
+        )
+        animator.addCompletion{ finished in
+            let secondAnimator = UIViewPropertyAnimator(
+                duration: 3,
+                curve: UIViewAnimationCurve.easeOut,
+                animations: {
+                    self.animalImageView.transform = CGAffineTransform.identity
+                }
+            )
+            secondAnimator.startAnimation()
+        }
+        animator.startAnimation()
+    }
 
     @IBAction func tap(_ sender: UITapGestureRecognizer) {
-        switch self.navigationItem.title {
-        case "Dog":
-            print("dog")
-        case "Cat":
-            print("cat")
-        case "Cow":
-            print("cow")
-        case "Chicken":
-            print("chicken")
-        case "Snake":
-            print("snake")
-        case "Pig":
-            print("pig")
-        default:
-            print("nada")
-        }
+        AudioServicesPlaySystemSound(animalSoundID)
     }
 
     @IBAction func touchUpStartAnimation(_ sender: UIButton) {

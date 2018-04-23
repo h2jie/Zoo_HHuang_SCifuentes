@@ -9,8 +9,6 @@
 import UIKit
 import AVFoundation
 
-//import AudioToolbox
-
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {

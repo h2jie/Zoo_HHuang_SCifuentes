@@ -16,7 +16,7 @@
 		AA481DF42088E24600FDB319 /* Zoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF32088E24600FDB319 /* Zoo.mp3 */; };
 		AA481DFD2088E24C00FDB319 /* Snake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF62088E24C00FDB319 /* Snake.mp3 */; };
 		AA481DFE2088E24C00FDB319 /* Pig.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF72088E24C00FDB319 /* Pig.mp3 */; };
-		AA481DFF2088E24C00FDB319 /* Cock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF82088E24C00FDB319 /* Cock.mp3 */; };
+		AA481DFF2088E24C00FDB319 /* Chicken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF82088E24C00FDB319 /* Chicken.mp3 */; };
 		AA481E002088E24C00FDB319 /* Cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF92088E24C00FDB319 /* Cat.mp3 */; };
 		AA481E022088E24C00FDB319 /* Cow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DFB2088E24C00FDB319 /* Cow.mp3 */; };
 		AA481E032088E24C00FDB319 /* Dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DFC2088E24C00FDB319 /* Dog.mp3 */; };
@@ -36,7 +36,7 @@
 		AA481DF32088E24600FDB319 /* Zoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Zoo.mp3; sourceTree = "<group>"; };
 		AA481DF62088E24C00FDB319 /* Snake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Snake.mp3; sourceTree = "<group>"; };
 		AA481DF72088E24C00FDB319 /* Pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pig.mp3; sourceTree = "<group>"; };
-		AA481DF82088E24C00FDB319 /* Cock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cock.mp3; sourceTree = "<group>"; };
+		AA481DF82088E24C00FDB319 /* Chicken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Chicken.mp3; sourceTree = "<group>"; };
 		AA481DF92088E24C00FDB319 /* Cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cat.mp3; sourceTree = "<group>"; };
 		AA481DFB2088E24C00FDB319 /* Cow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Cow.mp3; sourceTree = "<group>"; };
 		AA481DFC2088E24C00FDB319 /* Dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dog.mp3; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			children = (
 				AA481DF62088E24C00FDB319 /* Snake.mp3 */,
 				AA481DF72088E24C00FDB319 /* Pig.mp3 */,
-				AA481DF82088E24C00FDB319 /* Cock.mp3 */,
+				AA481DF82088E24C00FDB319 /* Chicken.mp3 */,
 				AA481DF92088E24C00FDB319 /* Cat.mp3 */,
 				AA481DFB2088E24C00FDB319 /* Cow.mp3 */,
 				AA481DFC2088E24C00FDB319 /* Dog.mp3 */,
@@ -180,7 +180,7 @@
 				AA46AC94207D114A00008A94 /* LaunchScreen.storyboard in Resources */,
 				AA481DF42088E24600FDB319 /* Zoo.mp3 in Resources */,
 				AA481DFD2088E24C00FDB319 /* Snake.mp3 in Resources */,
-				AA481DFF2088E24C00FDB319 /* Cock.mp3 in Resources */,
+				AA481DFF2088E24C00FDB319 /* Chicken.mp3 in Resources */,
 				AA481E022088E24C00FDB319 /* Cow.mp3 in Resources */,
 				AA481DFE2088E24C00FDB319 /* Pig.mp3 in Resources */,
 				AA481E002088E24C00FDB319 /* Cat.mp3 in Resources */,
