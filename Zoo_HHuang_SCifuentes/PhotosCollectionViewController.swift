@@ -16,6 +16,47 @@ class PhotosCollectionViewController: UICollectionViewController {
     var backgroundAudioPlayer: AVAudioPlayer?
 
     let photos = ["Dog", "Cat", "Cow", "Chicken", "Snake", "Pig"]
+    
+
+    @IBAction func Audio(_ sender: UIBarButtonItem) {
+        
+        switch sender.title {
+        case "Audio On":
+            sender.title = "Audio Off"
+            
+            if let backgroundURL = Bundle.main.url(forResource: "Zoo", withExtension: "mp3") {
+                do {
+                    try backgroundAudioPlayer = AVAudioPlayer(contentsOf: backgroundURL)
+                    if let player = backgroundAudioPlayer {
+                        player.stop()
+                        
+                    }
+                } catch {
+                    print("Setting AVAudioPlayer failed.")
+                }
+            }
+            
+        case "Audio Off":
+            sender.title = "Audio On"
+            
+            if let backgroundURL = Bundle.main.url(forResource: "Zoo", withExtension: "mp3") {
+                do {
+                    try backgroundAudioPlayer = AVAudioPlayer(contentsOf: backgroundURL)
+                    if let player = backgroundAudioPlayer {
+                        player.numberOfLoops = Int(-1)
+                        player.prepareToPlay()
+                        player.play()
+                        
+                    }
+                } catch {
+                    print("Setting AVAudioPlayer failed.")
+                }
+            }
+        default:
+            break
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +74,7 @@ class PhotosCollectionViewController: UICollectionViewController {
                     player.numberOfLoops = Int(-1)
                     player.prepareToPlay()
                     player.play()
+                    
                 }
             } catch {
                 print("Setting AVAudioPlayer failed.")

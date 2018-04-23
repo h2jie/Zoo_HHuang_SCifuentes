@@ -12,7 +12,6 @@
 		AA46AC8F207D114900008A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46AC8D207D114900008A94 /* Main.storyboard */; };
 		AA46AC94207D114A00008A94 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA46AC92207D114A00008A94 /* LaunchScreen.storyboard */; };
 		AA481DEF2088DE1400FDB319 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA481DEE2088DE1300FDB319 /* AudioToolbox.framework */; };
-		AA481DF12088E1F300FDB319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF02088E1F300FDB319 /* Assets.xcassets */; };
 		AA481DF42088E24600FDB319 /* Zoo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF32088E24600FDB319 /* Zoo.mp3 */; };
 		AA481DFD2088E24C00FDB319 /* Snake.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF62088E24C00FDB319 /* Snake.mp3 */; };
 		AA481DFE2088E24C00FDB319 /* Pig.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DF72088E24C00FDB319 /* Pig.mp3 */; };
@@ -22,6 +21,7 @@
 		AA481E032088E24C00FDB319 /* Dog.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA481DFC2088E24C00FDB319 /* Dog.mp3 */; };
 		AA481E052088E93B00FDB319 /* AnimalViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA481E042088E93B00FDB319 /* AnimalViewCell.swift */; };
 		AA9E19902086300C000C99A2 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E198F2086300C000C99A2 /* PhotosCollectionViewController.swift */; };
+		AAC5E08A208E7B2100F5B8EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC5E089208E7B2100F5B8EE /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		AA46AC93207D114A00008A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA46AC95207D114A00008A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA481DEE2088DE1300FDB319 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		AA481DF02088E1F300FDB319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA481DF32088E24600FDB319 /* Zoo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Zoo.mp3; sourceTree = "<group>"; };
 		AA481DF62088E24C00FDB319 /* Snake.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Snake.mp3; sourceTree = "<group>"; };
 		AA481DF72088E24C00FDB319 /* Pig.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Pig.mp3; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		AA481DFC2088E24C00FDB319 /* Dog.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Dog.mp3; sourceTree = "<group>"; };
 		AA481E042088E93B00FDB319 /* AnimalViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewCell.swift; sourceTree = "<group>"; };
 		AA9E198F2086300C000C99A2 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		AAC5E089208E7B2100F5B8EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +76,11 @@
 		AA46AC88207D114900008A94 /* Zoo_HHuang_SCifuentes */ = {
 			isa = PBXGroup;
 			children = (
+				AAC5E089208E7B2100F5B8EE /* Assets.xcassets */,
 				AA481DF22088E22000FDB319 /* Sounds */,
 				AA46AC89207D114900008A94 /* AppDelegate.swift */,
 				AA46AC8B207D114900008A94 /* AnimalDescriptionViewController.swift */,
 				AA481E042088E93B00FDB319 /* AnimalViewCell.swift */,
-				AA481DF02088E1F300FDB319 /* Assets.xcassets */,
 				AA46AC8D207D114900008A94 /* Main.storyboard */,
 				AA46AC92207D114A00008A94 /* LaunchScreen.storyboard */,
 				AA46AC95207D114A00008A94 /* Info.plist */,
@@ -181,10 +181,10 @@
 				AA481DF42088E24600FDB319 /* Zoo.mp3 in Resources */,
 				AA481DFD2088E24C00FDB319 /* Snake.mp3 in Resources */,
 				AA481DFF2088E24C00FDB319 /* Chicken.mp3 in Resources */,
+				AAC5E08A208E7B2100F5B8EE /* Assets.xcassets in Resources */,
 				AA481E022088E24C00FDB319 /* Cow.mp3 in Resources */,
 				AA481DFE2088E24C00FDB319 /* Pig.mp3 in Resources */,
 				AA481E002088E24C00FDB319 /* Cat.mp3 in Resources */,
-				AA481DF12088E1F300FDB319 /* Assets.xcassets in Resources */,
 				AA46AC8F207D114900008A94 /* Main.storyboard in Resources */,
 				AA481E032088E24C00FDB319 /* Dog.mp3 in Resources */,
 			);
