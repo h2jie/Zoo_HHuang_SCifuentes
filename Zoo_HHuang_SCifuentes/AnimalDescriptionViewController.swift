@@ -15,7 +15,8 @@ class AnimalDescriptionViewController: UIViewController {
     private let BUTTON_WIDTH: CGFloat = 150.0
     private let BUTTON_HEIGHT: CGFloat = 50.0
 
-    @IBOutlet weak var animalImageView: UIImageView!
+//    @IBOutlet weak var animalImageView: UIImageView!
+    var animalImageView: UIImageView!
 
     var animalImageToDisplay: UIImage?
     var buttonStart = UIButton(type: UIButtonType.system)
@@ -26,13 +27,25 @@ class AnimalDescriptionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        animalImageView.isUserInteractionEnabled = true
         
         if let animal = animalImageToDisplay {
-
-            self.animalImageView.image = animal
             self.navigationItem.title = animal.accessibilityIdentifier
+            self.animalImageView = UIImageView(image: animal)
+//            self.animalImageView.image = animal
+            
+            self.animalImageView.frame = CGRect(x: self.view.frame.origin.x , y: self.view.frame.origin.y + 80, width: 240, height: 250)
+            self.animalImageView.center.x = self.view.center.x
+            self.animalImageView.contentMode = UIViewContentMode.scaleToFill
+            self.view.addSubview(self.animalImageView)
         }
+        
+        animalImageView.isUserInteractionEnabled = true
+        
+        let tapRecognizer = UITapGestureRecognizer(
+            target: self, action: #selector(tap(_:))
+        )
+        animalImageView.addGestureRecognizer(tapRecognizer)
+        animalImageView.setNeedsDisplay()
 
         switch self.navigationItem.title {
         case "Dog":
@@ -50,7 +63,7 @@ class AnimalDescriptionViewController: UIViewController {
             animalImageView.animationDuration = 2.0
 
             //Button Start animacion
-            buttonStart.frame = CGRect(x: self.view.frame.width / 2 - BUTTON_WIDTH / 2, y: self.view.frame.height - BUTTON_HEIGHT - 100, width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
+            buttonStart.frame = CGRect(x: self.view.frame.width / 2 - BUTTON_WIDTH / 2, y: self.view.frame.height - BUTTON_HEIGHT - 50, width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
             buttonStart.setTitle("Start Animation", for: UIControlState.normal)
             buttonStart.addTarget(self, action: #selector(touchUpStartAnimation), for: UIControlEvents.touchUpInside)
             self.view.addSubview(buttonStart)
@@ -59,6 +72,7 @@ class AnimalDescriptionViewController: UIViewController {
             buttonStop.frame = buttonStart.frame
             buttonStop.setTitle("Stop Animation", for: UIControlState.normal)
             buttonStop.addTarget(self, action: #selector(touchUpStopAnimation), for: UIControlEvents.touchUpInside)
+            
             self.view.addSubview(buttonStop)
             buttonStop.isHidden = true
 
@@ -77,7 +91,7 @@ class AnimalDescriptionViewController: UIViewController {
             animalImageView.animationDuration = 2.0
             
             //Button Start animacion
-            buttonStart.frame = CGRect(x: self.view.frame.width / 2 - BUTTON_WIDTH / 2, y: self.view.frame.height - BUTTON_HEIGHT - 100, width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
+            buttonStart.frame = CGRect(x: self.view.frame.width / 2 - BUTTON_WIDTH / 2, y: self.view.frame.height - BUTTON_HEIGHT - 50, width: BUTTON_WIDTH, height: BUTTON_HEIGHT)
             buttonStart.setTitle("Start Animation", for: UIControlState.normal)
             buttonStart.addTarget(self, action: #selector(touchUpStartAnimation), for: UIControlEvents.touchUpInside)
             self.view.addSubview(buttonStart)
@@ -186,7 +200,7 @@ class AnimalDescriptionViewController: UIViewController {
         animator.startAnimation()
     }
 
-    @IBAction func tap(_ sender: UITapGestureRecognizer) {
+    @objc func tap(_ sender: UITapGestureRecognizer) {
         AudioServicesPlaySystemSound(animalSoundID)
     }
 

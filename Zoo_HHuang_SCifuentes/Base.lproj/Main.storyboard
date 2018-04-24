@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,37 +17,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat0" translatesAutoresizingMaskIntoConstraints="NO" id="5cG-g2-gIq">
-                                <rect key="frame" x="16" y="64" width="343" height="236"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="236" id="PCE-OX-0Pt"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="yvi-hW-WaY" appends="YES" id="SXT-xv-mAJ"/>
-                                </connections>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="5cG-g2-gIq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="a7z-6y-u5K"/>
-                            <constraint firstItem="5cG-g2-gIq" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="p9R-p0-6jK"/>
-                            <constraint firstItem="5cG-g2-gIq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vSR-Es-Ju8"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="BlD-g4-zLc"/>
-                    <connections>
-                        <outlet property="animalImageView" destination="5cG-g2-gIq" id="yeM-Qc-aHz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="yvi-hW-WaY">
-                    <connections>
-                        <action selector="tap:" destination="BYZ-38-t0r" id="Fpy-Us-LrQ"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2760.8000000000002" y="199.25037481259372"/>
         </scene>
@@ -127,7 +101,4 @@
             <point key="canvasLocation" x="824.79999999999995" y="200.14992503748127"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="cat0" width="1000" height="1000"/>
-    </resources>
 </document>
